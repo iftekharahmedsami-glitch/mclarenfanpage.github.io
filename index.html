@@ -30,7 +30,7 @@
 		<div class="featured" role="banner">
 			<img src="images/6.jpg" alt="McLaren team at the track" class="hero">
 			<h2>Welcome to the McLaren Fan Club</h2>
-			<!-- Required assignment: prominent welcome area populated by JS -->
+			
 			<div id="welcome-message" style="margin:12px 15px; padding:12px; font-size:18px; font-weight:600; color:#fff;">Welcome to McLaren Racing!</div>
 			<p>
 				Celebrating McLaren racing heritage and the community of fans worldwide. Join us for news, events, and fan media celebrating our favorite team.
@@ -70,7 +70,7 @@
 				<article class="content" role="main">
 				<h1>Latest from the Pit</h1>
 					<a href="images/10.jpg" data-lightbox data-title="Latest from the Pit"><img src="images/10.jpg" alt="McLaren pit lane action"></a>
-					<!-- Required assignment: rating input and result -->
+					
 					<div id="rating-section" style="margin:14px 0; padding:10px; background:rgba(255,255,255,0.03); border-radius:6px;">
 						<label for="rating-input" style="color:#ff6b35; font-weight:600; margin-right:8px;">Rate McLaren (1-10):</label>
 						<input id="rating-input" type="number" min="1" max="10" style="width:60px; padding:6px; margin-right:8px;"> 
@@ -109,11 +109,10 @@
 		</footer>
 	</div>
 	<script src="js/lightbox.js"></script>
-	<!-- Required assignment scripts: welcome prompt and rating handler -->
+	
 	<script>
 	document.addEventListener('DOMContentLoaded', function(){
 		var welcomeEl = document.getElementById('welcome-message');
-		var changeBtn = document.getElementById('change-name');
 		function setWelcome(name){
 			if(!welcomeEl) return;
 			if(name && name.trim()){
@@ -122,7 +121,7 @@
 				welcomeEl.textContent = 'Welcome to McLaren Racing!';
 			}
 		}
-		// No prompts: set a JS-generated welcome message without asking for user input
+		
 		try{
 			setWelcome(null);
 		}catch(e){ /* ignore errors */ }
