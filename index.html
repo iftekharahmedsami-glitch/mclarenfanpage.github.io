@@ -31,10 +31,7 @@
 			<img src="images/6.jpg" alt="McLaren team at the track" class="hero">
 			<h2>Welcome to the McLaren Fan Club</h2>
 			<!-- Required assignment: prominent welcome area populated by JS -->
-			<div style="display:flex; align-items:center; gap:8px; margin:12px 15px;">
-				<div id="welcome-message" style="padding:12px; font-size:18px; font-weight:600; color:#fff;"></div>
-				<button id="change-name" type="button" style="background:transparent; border:1px solid #ff6b35; color:#ff6b35; padding:6px 8px; border-radius:4px; cursor:pointer; font-weight:600;">Change name</button>
-			</div>
+			<div id="welcome-message" style="margin:12px 15px; padding:12px; font-size:18px; font-weight:600; color:#fff;">Welcome to McLaren Racing!</div>
 			<p>
 				Celebrating McLaren racing heritage and the community of fans worldwide. Join us for news, events, and fan media celebrating our favorite team.
 			</p>
@@ -125,31 +122,10 @@
 				welcomeEl.textContent = 'Welcome to McLaren Racing!';
 			}
 		}
+		// No prompts: set a JS-generated welcome message without asking for user input
 		try{
-			var stored = null;
-			try { stored = localStorage.getItem('mclaren_user'); } catch(e) { stored = null; }
-			if(stored){
-				setWelcome(stored);
-			} else {
-				var name = prompt('Please enter your name:');
-				if(name && name.trim()){
-					try{ localStorage.setItem('mclaren_user', name.trim()); } catch(e){}
-					setWelcome(name.trim());
-				} else {
-					setWelcome(null);
-				}
-			}
-		}catch(e){/* ignore prompt/localStorage errors */}
-		if(changeBtn){
-			changeBtn.addEventListener('click', function(){
-				try{ localStorage.removeItem('mclaren_user'); } catch(e){}
-				var newName = prompt('Enter your name:');
-				if(newName && newName.trim()){
-					try{ localStorage.setItem('mclaren_user', newName.trim()); } catch(e){}
-					setWelcome(newName.trim());
-				}
-			});
-		}
+			setWelcome(null);
+		}catch(e){ /* ignore errors */ }
 
 		var btn = document.getElementById('rating-submit');
 		if(btn){
